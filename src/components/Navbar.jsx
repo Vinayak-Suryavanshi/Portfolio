@@ -92,7 +92,7 @@ function Navbar() {
 
           {/* RESUME */}
           <a
-            href="/resume.pdf"
+            href="/Vinayak_CV F.pdf"
             download="Vinayak_Resume.pdf"
             className="hover:text-emerald-400 transition"
           >
