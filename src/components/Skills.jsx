@@ -55,16 +55,19 @@ function Skills() {
 
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              className="border border-gray-200 dark:border-zinc-800 
-              rounded-xl p-5 sm:p-6 
-              bg-white/60 dark:bg-zinc-900/30 
-              transition duration-200 hover:border-emerald-400"
+              transition={{ delay: index * 0.15, duration: 0.5 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group border border-gray-200 dark:border-zinc-800 
+              rounded-2xl p-6 sm:p-8 
+              bg-white/60 dark:bg-zinc-900/40 
+              backdrop-blur-md relative overflow-hidden
+              transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20"
             >
 
-              <h3 className="text-emerald-500 dark:text-emerald-400 mb-4 sm:mb-5 font-semibold tracking-wide text-sm sm:text-base">
+              <h3 className="text-emerald-500 dark:text-emerald-400 mb-6 font-bold tracking-wide text-lg sm:text-xl flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-emerald-500/50 group-hover:w-12 transition-all duration-300" />
                 {group.title}
               </h3>
 
@@ -72,15 +75,17 @@ function Skills() {
 
                 {group.skills.map((skill, i) => (
 
-                  <span
+                  <motion.span
                     key={i}
-                    className="px-3 py-1 text-xs sm:text-sm rounded-full 
-                    bg-gray-200/70 dark:bg-zinc-700/60 
-                    transition duration-200 cursor-default
-                    hover:text-emerald-400"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full 
+                    border border-gray-200 dark:border-zinc-700/50
+                    bg-gray-100/80 dark:bg-zinc-800/60 text-gray-700 dark:text-gray-300
+                    transition-colors duration-300 cursor-pointer
+                    hover:border-emerald-500/50 hover:text-emerald-500 dark:hover:text-emerald-400 hover:shadow-[0_0_10px_rgba(16,185,129,0.2)]"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
 
                 ))}
 

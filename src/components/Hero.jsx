@@ -82,8 +82,16 @@ function Hero() {
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
-        <div className="absolute w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-emerald-400/10 blur-3xl top-[-100px] left-[-80px]" />
-        <div className="absolute w-[220px] sm:w-[300px] h-[220px] sm:h-[300px] bg-cyan-400/10 blur-3xl bottom-[-100px] right-[-80px]" />
+        <motion.div 
+          animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-emerald-400/15 blur-3xl top-[-100px] left-[-80px]" 
+        />
+        <motion.div 
+          animate={{ x: [0, -40, 20, 0], y: [0, 30, -30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[220px] sm:w-[300px] h-[220px] sm:h-[300px] bg-cyan-400/10 blur-3xl bottom-[-100px] right-[-80px]" 
+        />
       </div>
 
       {/* CONTENT */}
@@ -114,25 +122,27 @@ function Hero() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
 
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(16,185,129,0.4)" }}
+            whileTap={{ scale: 0.95 }}
             href="#projects"
-            className="border border-emerald-500 dark:border-emerald-400 px-6 py-2 rounded-lg 
-            hover:bg-emerald-500 dark:hover:bg-emerald-400 
-            hover:text-black transition duration-200"
+            className="border border-emerald-500 dark:border-emerald-400 px-6 py-3 rounded-lg 
+            hover:bg-emerald-500 dark:hover:bg-emerald-400 font-medium
+            hover:text-black transition-all duration-300 relative overflow-hidden group"
           >
-            Explore My Work
+            <span className="relative z-10">Explore My Work</span>
+            <div className="absolute inset-0 h-full w-full bg-emerald-400/20 group-hover:scale-x-100 scale-x-0 origin-left transition-transform duration-300 ease-out" />
           </motion.a>
 
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(16,185,129,0.4)" }}
+            whileTap={{ scale: 0.95 }}
             href="#contact"
-            className="border border-emerald-500 dark:border-emerald-400 px-6 py-2 rounded-lg 
-            hover:bg-emerald-500 dark:hover:bg-emerald-400 
-            hover:text-black transition duration-200"
+            className="border border-emerald-500 dark:border-emerald-400 px-6 py-3 rounded-lg 
+            hover:bg-emerald-500 dark:hover:bg-emerald-400 font-medium
+            hover:text-black transition-all duration-300 relative overflow-hidden group"
           >
-            Get In Touch
+            <span className="relative z-10">Get In Touch</span>
+            <div className="absolute inset-0 h-full w-full bg-emerald-400/20 group-hover:scale-x-100 scale-x-0 origin-left transition-transform duration-300 ease-out" />
           </motion.a>
 
         </div>

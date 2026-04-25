@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, ArrowUpRight } from "lucide-react";
 
 function Projects() {
 
@@ -37,9 +37,9 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="w-full py-16 md:py-20">
+    <section id="projects" className="w-full py-16 md:py-24 relative overflow-hidden">
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* 🔥 SEPARATOR */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent mb-10" />
@@ -55,7 +55,7 @@ function Projects() {
         </motion.h2>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
 
           {projects.map((project, index) => (
 
@@ -64,54 +64,63 @@ function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
-              whileHover={{ y: -6 }}
-              whileTap={{ scale: 0.97 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="group border border-gray-200 dark:border-zinc-800 
-              rounded-xl p-5 sm:p-6 
-              bg-white/60 dark:bg-zinc-900/30 
-              backdrop-blur-md
-              transition duration-200 
-              hover:border-emerald-400 
-              hover:shadow-lg hover:shadow-emerald-500/10"
+              rounded-2xl p-6 sm:p-8 
+              bg-white/60 dark:bg-zinc-900/40 
+              backdrop-blur-md relative overflow-hidden
+              transition-all duration-300 
+              hover:border-emerald-400 dark:hover:border-emerald-400
+              hover:shadow-xl hover:shadow-emerald-500/20 flex flex-col justify-between"
             >
 
-              {/* TITLE */}
-              <h3 className="text-lg sm:text-xl font-semibold group-hover:text-emerald-400 transition duration-200">
-                {project.title}
-              </h3>
+              {/* WATERMARK BACKGROUND */}
+              <div className="absolute -bottom-4 -right-2 text-7xl sm:text-8xl font-black text-gray-900/[0.04] dark:text-white/[0.03] select-none pointer-events-none group-hover:text-emerald-500/[0.08] transition-all duration-500 transform group-hover:scale-110 group-hover:-translate-x-2 group-hover:-translate-y-2">
+                {String(index + 1).padStart(2, '0')}
+              </div>
 
-              {/* DESC */}
-              <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                {project.desc}
-              </p>
+              <div className="relative z-10">
+                {/* CATEGORY LABEL */}
+                <div className="text-xs font-mono text-emerald-500 dark:text-emerald-400 mb-4 tracking-widest uppercase opacity-80 group-hover:opacity-100 transition-opacity">
+                  // {String(index + 1).padStart(2, '0')} — PROJECT
+                </div>
 
-              {/* TECH */}
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tech.map((t, i) => (
-                  <span
-                    key={i}
-                    className="text-xs px-3 py-1 rounded-full 
-                    bg-gray-200/70 dark:bg-zinc-700/60 
-                    transition duration-200
-                    group-hover:text-emerald-400"
-                  >
-                    {t}
-                  </span>
-                ))}
+                {/* TITLE */}
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors duration-300">
+                  {project.title}
+                </h3>
+
+                {/* DESC */}
+                <p className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                  {project.desc}
+                </p>
+
+                {/* TECH */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((t, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-xs font-mono rounded-full 
+                      border border-gray-200 dark:border-zinc-700/50
+                      bg-gray-100/80 dark:bg-zinc-800/60 text-gray-600 dark:text-gray-300
+                      transition duration-300 group-hover:border-emerald-500/30 group-hover:text-emerald-500"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* FOOTER */}
-              <div className="mt-6 flex justify-between items-center">
-
-                <span className="text-xs text-gray-400">
-                  View Project
+              <div className="mt-4 pt-5 border-t border-gray-200/50 dark:border-zinc-800/50 flex justify-between items-center relative z-10">
+                <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-emerald-500 transition-colors flex items-center gap-2">
+                  View Project <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
-
-                <Github className="transition duration-200 group-hover:text-emerald-400 group-hover:scale-110" />
-
+                <Github className="w-5 h-5 text-gray-400 transition-colors duration-300 group-hover:text-emerald-500 group-hover:scale-110" />
               </div>
 
             </motion.a>

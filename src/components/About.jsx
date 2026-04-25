@@ -111,24 +111,28 @@ function About() {
 
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.08 }}
-              whileHover={{ y: -4 }}
-              className="border border-gray-200 dark:border-zinc-800 
-              rounded-xl p-5 sm:p-6 
-              bg-white/60 dark:bg-zinc-900/30 
-              backdrop-blur-md
-              transition duration-200 hover:border-emerald-400 hover:shadow-lg hover:shadow-emerald-500/10"
+              transition={{ delay: index * 0.1, duration: 0.4 }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group border border-gray-200 dark:border-zinc-800 
+              rounded-2xl p-6 sm:p-8 
+              bg-white/60 dark:bg-zinc-900/40 
+              backdrop-blur-md relative overflow-hidden
+              transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20"
             >
+              
+              {/* GRADIENT REVEAL ON HOVER */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
               {/* TITLE */}
-              <h3 className="text-xs sm:text-sm mb-3 sm:mb-4 tracking-widest text-emerald-500 dark:text-emerald-400">
+              <h3 className="text-xs sm:text-sm mb-3 sm:mb-4 tracking-widest text-emerald-500 dark:text-emerald-400 flex items-center gap-2">
+                <span className="w-4 h-[2px] bg-emerald-500/50 group-hover:w-8 transition-all duration-300" />
                 {item.title}
               </h3>
 
               {/* CONTENT */}
-              <div className="text-sm sm:text-base">
+              <div className="text-sm sm:text-base relative z-10 group-hover:text-gray-900 dark:group-hover:text-gray-200 transition-colors duration-300">
                 {item.content}
               </div>
 

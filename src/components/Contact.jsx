@@ -99,16 +99,17 @@ function Contact() {
             onChange={handleChange}
             placeholder="Your Name"
             className="border border-gray-300 dark:border-zinc-700 
-            p-3 rounded-lg 
+            p-3 rounded-xl 
             bg-white/60 dark:bg-zinc-900/40 
             backdrop-blur-md 
             text-black dark:text-white 
             placeholder-gray-500 
             focus:outline-none 
-            focus:border-emerald-400 
+            focus:border-emerald-400 dark:focus:border-emerald-400
             focus:bg-white dark:focus:bg-zinc-900
-            focus:ring-2 focus:ring-emerald-400/50
-            transition duration-300"
+            focus:ring-2 focus:ring-emerald-400/30
+            focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]
+            transition-all duration-300"
           />
 
           <input
@@ -117,16 +118,17 @@ function Contact() {
             onChange={handleChange}
             placeholder="Email"
             className="border border-gray-300 dark:border-zinc-700 
-            p-3 rounded-lg 
+            p-3 rounded-xl 
             bg-white/60 dark:bg-zinc-900/40 
             backdrop-blur-md 
             text-black dark:text-white 
             placeholder-gray-500 
             focus:outline-none 
-            focus:border-emerald-400 
+            focus:border-emerald-400 dark:focus:border-emerald-400
             focus:bg-white dark:focus:bg-zinc-900
-            focus:ring-2 focus:ring-emerald-400/50
-            transition duration-300"
+            focus:ring-2 focus:ring-emerald-400/30
+            focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]
+            transition-all duration-300"
           />
 
           <textarea
@@ -136,30 +138,33 @@ function Contact() {
             placeholder="Your Message"
             rows="4"
             className="border border-gray-300 dark:border-zinc-700 
-            p-3 rounded-lg 
+            p-3 rounded-xl 
             bg-white/60 dark:bg-zinc-900/40 
             backdrop-blur-md 
             text-black dark:text-white 
             placeholder-gray-500 
             focus:outline-none 
-            focus:border-emerald-400 
+            focus:border-emerald-400 dark:focus:border-emerald-400
             focus:bg-white dark:focus:bg-zinc-900
-            focus:ring-2 focus:ring-emerald-400/50
-            transition duration-300 resize-none"
+            focus:ring-2 focus:ring-emerald-400/30
+            focus:shadow-[0_0_15px_rgba(16,185,129,0.15)]
+            transition-all duration-300 resize-none"
           />
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02, boxShadow: "0px 0px 20px rgba(16,185,129,0.4)" }}
+            whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={loading}
             className="border border-emerald-500 dark:border-emerald-400 
-            p-3 rounded-lg 
+            p-3 rounded-xl font-medium
             hover:bg-emerald-500 dark:hover:bg-emerald-400 
             hover:text-black 
-            transition duration-300 
+            transition-all duration-300 
             disabled:opacity-50"
           >
             {loading ? "Sending..." : "Send Message"}
-          </button>
+          </motion.button>
 
         </form>
 
