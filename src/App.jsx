@@ -1,5 +1,4 @@
 import Navbar from "./components/Navbar";
-import ParticlesBg from "./components/ParticlesBg";
 import Hero from "./components/Hero";
 import Cursor from "./components/Cursor";
 import About from "./components/About";
@@ -16,9 +15,11 @@ function App() {
     <div className="bg-white dark:bg-gradient-to-br dark:from-black dark:via-zinc-900 dark:to-black 
 text-black dark:text-white scroll-smooth overflow-x-hidden relative">
 
-      {/* ❄️ INTERACTIVE PARTICLES */}
+      {/* ❄️ GLOBAL SNOW */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <ParticlesBg />
+        {[...Array(12)].map((_, i) => (
+          <span key={i} className="snow" />
+        ))}
       </div>
 
       <Toaster 

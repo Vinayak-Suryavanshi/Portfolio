@@ -12,12 +12,12 @@ function Skills() {
     {
       title: "Frameworks",
       icon: <Globe className="w-5 h-5 text-emerald-500" />,
-      items: ["React JS", "Next JS", "Node JS", "Express JS", "Tailwind CSS", "Firebase", "MongoDB", "Bootstrap"]
+      items: ["React JS", "Next JS", "Node JS", "Tailwind CSS", "Firebase", "MongoDB"]
     },
     {
       title: "Tools",
       icon: <Terminal className="w-5 h-5 text-emerald-500" />,
-      items: ["Git/GitHub", "VS Code", "Postman", "Figma", "Vercel", "Netlify", "Drizzle ORM", "AWS"]
+      items: ["Git/GitHub", "VS Code", "Postman", "Figma", "Vercel", "AWS"]
     }
   ];
 
@@ -43,7 +43,7 @@ function Skills() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="bg-white/40 dark:bg-[#13131f] border border-gray-200 dark:border-gray-800 rounded-xl p-6 relative overflow-hidden group hover:border-emerald-500/50 transition-colors"
+              className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-emerald-500/10 rounded-lg">
@@ -54,7 +54,7 @@ function Skills() {
 
               <div className="flex flex-col gap-2">
                 {category.items.map((item, i) => (
-                  <div key={i} className="px-4 py-2 bg-gray-50/50 dark:bg-[#1a1a2e]/50 border border-gray-200/50 dark:border-gray-800/50 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-white dark:hover:bg-[#1a1a2e] hover:border-emerald-500/30 transition-all duration-300">
+                  <div key={i} className="px-4 py-2 bg-gray-100/80 dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700/50 rounded-lg text-gray-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 hover:border-emerald-500/30 transition-all duration-300">
                     {item}
                   </div>
                 ))}
@@ -67,7 +67,7 @@ function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="bg-white/40 dark:bg-[#13131f] border border-gray-200 dark:border-gray-800 rounded-xl p-6 relative overflow-hidden flex flex-col hover:border-emerald-500/50 transition-colors"
+            className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 relative overflow-hidden flex flex-col hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300"
           >
             <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide mb-6">Skill Radar</h3>
             <div className="flex-1 w-full h-full flex items-center justify-center relative min-h-[250px]">
