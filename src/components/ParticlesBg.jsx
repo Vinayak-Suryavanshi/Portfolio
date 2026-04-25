@@ -9,30 +9,69 @@ function ParticlesBg() {
 
   return (
     <Particles
+      id="tsparticles"
       init={particlesInit}
+      className="fixed inset-0 z-0"
       options={{
-        background: {
-          color: "#000"
-        },
+        fullScreen: { enable: false, zIndex: 0 },
         fpsLimit: 60,
+        interactivity: {
+          detectsOn: "window",
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            repulse: {
+              distance: 120,
+              duration: 0.4,
+            },
+          },
+        },
         particles: {
-          number: { value: 60 },
-          color: { value: "#00e5a0" },
+          color: {
+            value: ["#10b981", "#06b6d4", "#8b5cf6", "#f43f5e", "#eab308"],
+          },
           links: {
-            enable: true,
-            color: "#00e5a0",
-            distance: 150
+            enable: false,
           },
           move: {
+            direction: "none",
             enable: true,
-            speed: 1
+            outModes: {
+              default: "out",
+            },
+            random: true,
+            speed: 0.8,
+            straight: false,
+          },
+          number: {
+            density: {
+              enable: true,
+              area: 800,
+            },
+            value: 40,
+          },
+          opacity: {
+            value: 0.2,
+            random: true,
+          },
+          shape: {
+            type: ["circle", "triangle", "polygon"],
+            polygon: {
+              sides: 5
+            }
           },
           size: {
-            value: 3
-          }
-        }
+            value: { min: 2, max: 8 },
+            random: true,
+          },
+        },
+        detectRetina: true,
       }}
-      className="absolute top-0 left-0 -z-10"
     />
   );
 }

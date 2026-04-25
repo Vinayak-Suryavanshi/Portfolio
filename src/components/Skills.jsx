@@ -1,104 +1,106 @@
 import { motion } from "framer-motion";
+import { Code2, Globe, Terminal } from "lucide-react";
 
 function Skills() {
 
-  const skillGroups = [
+  const categories = [
     {
-      title: "Frontend",
-      skills: ["HTML", "CSS", "JavaScript", "React"]
+      title: "Languages",
+      icon: <Code2 className="w-5 h-5 text-emerald-500" />,
+      items: ["JavaScript", "TypeScript", "Python", "C/C++", "SQL", "HTML/CSS/Sass"]
     },
     {
-      title: "Backend & Tools",
-      skills: ["Node.js", "Git", "MongoDB"]
+      title: "Frameworks",
+      icon: <Globe className="w-5 h-5 text-emerald-500" />,
+      items: ["React JS", "Next JS", "Node JS", "Express JS", "Tailwind CSS", "Firebase", "MongoDB", "Bootstrap"]
     },
     {
-      title: "AI / ML",
-      skills: ["Python", "OpenCV", "Machine Learning", "TensorFlow"]
+      title: "Tools",
+      icon: <Terminal className="w-5 h-5 text-emerald-500" />,
+      items: ["Git/GitHub", "VS Code", "Postman", "Figma", "Vercel", "Netlify", "Drizzle ORM", "AWS"]
     }
   ];
 
   return (
-    <section
-      id="skills"
-      className="w-full py-16 md:py-24"
-    >
+    <section id="skills" className="w-full py-16 md:py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-
-        {/* HEADING */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-bold text-emerald-500 dark:text-emerald-400"
+          className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight mb-16"
         >
-          Skills
+          Technologies & tools.
         </motion.h2>
 
-        <div className="w-16 sm:w-20 h-[2px] bg-emerald-500 dark:bg-emerald-400 mt-3 sm:mt-4 mb-8 sm:mb-10" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        {/* INTRO */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-2xl mb-10 md:mb-14"
-        >
-          I work across frontend development, backend tools, and AI systems,
-          focusing on building interactive and intelligent applications.
-        </motion.p>
-
-        {/* SKILL GROUPS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
-
-          {skillGroups.map((group, index) => (
-
+          {/* CATEGORIES */}
+          {categories.map((category, idx) => (
             <motion.div
-              key={index}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.5 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="group border border-gray-200 dark:border-zinc-800 
-              rounded-2xl p-6 sm:p-8 
-              bg-white/60 dark:bg-zinc-900/40 
-              backdrop-blur-md relative overflow-hidden
-              transition-all duration-300 hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="bg-white/40 dark:bg-[#13131f] border border-gray-200 dark:border-gray-800 rounded-xl p-6 relative overflow-hidden group hover:border-emerald-500/50 transition-colors"
             >
-
-              <h3 className="text-emerald-500 dark:text-emerald-400 mb-6 font-bold tracking-wide text-lg sm:text-xl flex items-center gap-3">
-                <span className="w-8 h-[2px] bg-emerald-500/50 group-hover:w-12 transition-all duration-300" />
-                {group.title}
-              </h3>
-
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-
-                {group.skills.map((skill, i) => (
-
-                  <motion.span
-                    key={i}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full 
-                    border border-gray-200 dark:border-zinc-700/50
-                    bg-gray-100/80 dark:bg-zinc-800/60 text-gray-700 dark:text-gray-300
-                    transition-colors duration-300 cursor-pointer
-                    hover:border-emerald-500/50 hover:text-emerald-500 dark:hover:text-emerald-400 hover:shadow-[0_0_10px_rgba(16,185,129,0.2)]"
-                  >
-                    {skill}
-                  </motion.span>
-
-                ))}
-
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-emerald-500/10 rounded-lg">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide">{category.title}</h3>
               </div>
 
+              <div className="flex flex-col gap-2">
+                {category.items.map((item, i) => (
+                  <div key={i} className="px-4 py-2 bg-gray-50/50 dark:bg-[#1a1a2e]/50 border border-gray-200/50 dark:border-gray-800/50 rounded-lg text-gray-600 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 hover:bg-white dark:hover:bg-[#1a1a2e] hover:border-emerald-500/30 transition-all duration-300">
+                    {item}
+                  </div>
+                ))}
+              </div>
             </motion.div>
-
           ))}
 
+          {/* RADAR CHART CARD */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="bg-white/40 dark:bg-[#13131f] border border-gray-200 dark:border-gray-800 rounded-xl p-6 relative overflow-hidden flex flex-col hover:border-emerald-500/50 transition-colors"
+          >
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide mb-6">Skill Radar</h3>
+            <div className="flex-1 w-full h-full flex items-center justify-center relative min-h-[250px]">
+              <svg width="220" height="220" viewBox="0 0 200 200" className="drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                {/* Background webs */}
+                <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <polygon points="100,40 152,70 152,130 100,160 48,130 48,70" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <polygon points="100,60 135,80 135,120 100,140 65,120 65,80" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <polygon points="100,80 117,90 117,110 100,120 83,110 83,90" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                
+                {/* Axes */}
+                <line x1="100" y1="100" x2="100" y2="20" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <line x1="100" y1="100" x2="170" y2="60" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <line x1="100" y1="100" x2="170" y2="140" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <line x1="100" y1="100" x2="100" y2="180" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <line x1="100" y1="100" x2="30" y2="140" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+                <line x1="100" y1="100" x2="30" y2="60" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+
+                {/* Data Polygon */}
+                <polygon points="100,30 160,65 140,125 100,165 50,135 60,70" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="2" className="animate-pulse" />
+              </svg>
+              {/* Labels */}
+              <span className="absolute top-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Frontend</span>
+              <span className="absolute top-[28%] right-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Backend</span>
+              <span className="absolute bottom-[25%] right-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Security</span>
+              <span className="absolute bottom-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">IoT</span>
+              <span className="absolute bottom-[25%] left-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">ML/AI</span>
+              <span className="absolute top-[28%] left-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Cloud</span>
+            </div>
+          </motion.div>
+
         </div>
-
       </div>
-
     </section>
   );
 }

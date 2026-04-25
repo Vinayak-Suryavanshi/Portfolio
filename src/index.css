@@ -59,70 +59,7 @@ body {
 
 
 
-/* ❄️ SNOW EFFECT */
-.snow {
-  position: absolute;
-  top: -10px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgba(16,185,129,0.8);
-  box-shadow: 0 0 6px rgba(16,185,129,0.6);
-  opacity: 0.8;
-  animation: snowFall linear infinite;
-  will-change: transform;
-  filter: blur(0.3px);
-}
 
-/* DEPTH VARIATION */
-.snow:nth-child(odd) {
-  background: rgba(255,255,255,0.8);
-  transform: scale(0.8);
-}
-
-.snow:nth-child(even) {
-  background: rgba(255,255,255,0.8);
-  transform: scale(1.2);
-}
-
-/* POSITIONS */
-.snow:nth-child(1) { left: 5%;  animation-duration: 9s; }
-.snow:nth-child(2) { left: 15%; animation-duration: 11s; }
-.snow:nth-child(3) { left: 25%; animation-duration: 8s; }
-.snow:nth-child(4) { left: 35%; animation-duration: 10s; }
-.snow:nth-child(5) { left: 50%; animation-duration: 9.5s; }
-.snow:nth-child(6) { left: 65%; animation-duration: 12s; }
-.snow:nth-child(7) { left: 75%; animation-duration: 8.5s; }
-.snow:nth-child(8) { left: 85%; animation-duration: 11.5s; }
-.snow:nth-child(9) { left: 95%; animation-duration: 10s; }
-
-/* SNOW ANIMATION */
-@keyframes snowFall {
-  0% {
-    transform: translateY(-10px) translateX(0px);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: translateY(40px) translateX(10px);
-  }
-
-  100% {
-    transform: translateY(90px) translateX(-10px);
-    opacity: 0;
-  }
-}
-
-/* ❌ DISABLE SNOW ON MOBILE (performance boost) */
-@media (max-width: 768px) {
-  .snow {
-    display: none;
-  }
-}
 
 /* 🌊 RIPPLE EFFECT (MOBILE TAP) */
 .ripple {
