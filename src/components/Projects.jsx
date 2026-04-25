@@ -5,15 +5,25 @@ import { useState, useEffect } from "react";
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open and prevent layout shift
   useEffect(() => {
     if (selectedProject) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      const nav = document.querySelector('nav');
+      if (nav) nav.style.paddingRight = `${scrollbarWidth}px`;
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      const nav = document.querySelector('nav');
+      if (nav) nav.style.paddingRight = "";
     }
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      const nav = document.querySelector('nav');
+      if (nav) nav.style.paddingRight = "";
     };
   }, [selectedProject]);
 
@@ -190,7 +200,7 @@ function Projects() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm cursor-pointer"
+              className="absolute inset-0 bg-black/80 dark:bg-black/90 cursor-pointer"
             />
 
             {/* MODAL CONTENT */}

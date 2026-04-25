@@ -57,10 +57,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* REMOVE JITTER */
-* {
-  backface-visibility: hidden;
-}
+
 
 /* ❄️ SNOW EFFECT */
 .snow {

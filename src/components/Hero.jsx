@@ -83,14 +83,14 @@ function Hero() {
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         <motion.div 
-          animate={{ x: [0, 30, -20, 0], y: [0, -30, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-emerald-400/15 blur-3xl top-[-100px] left-[-80px]" 
+          animate={{ opacity: [0.4, 0.8, 0.4] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[250px] sm:w-[350px] h-[250px] sm:h-[350px] bg-emerald-400/15 blur-3xl top-[-100px] left-[-80px] rounded-full" 
         />
         <motion.div 
-          animate={{ x: [0, -40, 20, 0], y: [0, 30, -30, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-[220px] sm:w-[300px] h-[220px] sm:h-[300px] bg-cyan-400/10 blur-3xl bottom-[-100px] right-[-80px]" 
+          animate={{ opacity: [0.2, 0.6, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[220px] sm:w-[300px] h-[220px] sm:h-[300px] bg-cyan-400/10 blur-3xl bottom-[-100px] right-[-80px] rounded-full" 
         />
       </div>
 
