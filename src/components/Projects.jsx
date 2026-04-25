@@ -23,10 +23,10 @@ function Projects() {
       link: "https://viper-miku.github.io/falling-ball-game/"
     },
     {
-      title: "Website Blocker",
-      desc: "Blocks distracting websites using Python.",
-      tech: ["Python"],
-      link: "https://github.com/YOUR_GITHUB_LINK"
+      title: "Blood Bank System",
+      desc: "Full-stack blood bank management system.",
+      tech: ["HTML", "CSS", "JavaScript", "React"],
+      link: "https://blood-bank-system-nu.vercel.app/"
     },
     {
       title: "Gesture Volume Control",
