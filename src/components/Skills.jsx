@@ -62,40 +62,42 @@ function Skills() {
             </motion.div>
           ))}
 
-          {/* RADAR CHART CARD */}
+          {/* JAPANESE THEME CARD */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 relative overflow-hidden flex flex-col hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300"
+            className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300 group min-h-[250px]"
           >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-wide mb-6">Skill Radar</h3>
-            <div className="flex-1 w-full h-full flex items-center justify-center relative min-h-[250px]">
-              <svg width="220" height="220" viewBox="0 0 200 200" className="drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                {/* Background webs */}
-                <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <polygon points="100,40 152,70 152,130 100,160 48,130 48,70" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <polygon points="100,60 135,80 135,120 100,140 65,120 65,80" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <polygon points="100,80 117,90 117,110 100,120 83,110 83,90" fill="none" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                
-                {/* Axes */}
-                <line x1="100" y1="100" x2="100" y2="20" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <line x1="100" y1="100" x2="170" y2="60" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <line x1="100" y1="100" x2="170" y2="140" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <line x1="100" y1="100" x2="100" y2="180" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <line x1="100" y1="100" x2="30" y2="140" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
-                <line x1="100" y1="100" x2="30" y2="60" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-[#27272a]" />
+            {/* Background glowing orbs */}
+            <div className="absolute top-[-20%] right-[-10%] w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-colors duration-500" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-colors duration-500" />
 
-                {/* Data Polygon */}
-                <polygon points="100,30 160,65 140,125 100,165 50,135 60,70" fill="rgba(16,185,129,0.15)" stroke="#10b981" strokeWidth="2" className="animate-pulse" />
-              </svg>
-              {/* Labels */}
-              <span className="absolute top-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Frontend</span>
-              <span className="absolute top-[28%] right-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Backend</span>
-              <span className="absolute bottom-[25%] right-0 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Security</span>
-              <span className="absolute bottom-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">IoT</span>
-              <span className="absolute bottom-[25%] left-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">ML/AI</span>
-              <span className="absolute top-[28%] left-2 text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest">Cloud</span>
+            {/* Kanji Watermark */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-9xl font-black text-gray-900/[0.03] dark:text-white/[0.02] select-none pointer-events-none group-hover:scale-110 group-hover:text-emerald-500/[0.05] transition-all duration-700">
+              創
+            </div>
+
+            <div className="flex w-full h-full items-center justify-center gap-6 z-10">
+              
+              {/* Vertical Text (Tategaki) */}
+              <div 
+                className="text-4xl md:text-5xl font-black tracking-[0.2em] text-gray-900 dark:text-white select-none"
+                style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
+              >
+                <span className="text-emerald-500 drop-shadow-[0_0_10px_rgba(16,185,129,0.4)]">未来</span>
+                <span className="opacity-80">創造</span>
+              </div>
+              
+              {/* Divider & Info */}
+              <div className="flex flex-col border-l-2 border-emerald-500/20 pl-5 py-2">
+                <span className="text-[10px] font-mono text-emerald-500 tracking-[0.2em] uppercase mb-1">Philosophy</span>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">Future<br/>Creation</h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed max-w-[120px]">
+                  Architecting tomorrow's digital experiences.
+                </p>
+              </div>
+
             </div>
           </motion.div>
 
