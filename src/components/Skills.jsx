@@ -12,12 +12,12 @@ function Skills() {
     {
       title: "Frameworks",
       icon: <Globe className="w-5 h-5 text-emerald-500" />,
-      items: ["React JS", "Next JS", "Node JS", "Tailwind CSS", "Firebase", "MongoDB"]
+      items: ["React JS", "Next JS", "Node JS", "Tailwind CSS", "Firebase", "MongoDB", "AI / ML"]
     },
     {
       title: "Tools",
       icon: <Terminal className="w-5 h-5 text-emerald-500" />,
-      items: ["Git/GitHub", "VS Code", "Postman", "Figma", "Vercel", "AWS"]
+      items: ["Git/GitHub", "VS Code", "Postman", "Figma", "Vercel", "Render", "AWS"]
     }
   ];
 
@@ -25,13 +25,17 @@ function Skills() {
     <section id="skills" className="w-full py-16 md:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
+        {/* 🔥 SEPARATOR */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent mb-10" />
+
+        {/* HEADING */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight mb-16"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-500 dark:text-emerald-400 mb-10 md:mb-12"
         >
-          Technologies & tools.
+          Technologies & Tools
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
