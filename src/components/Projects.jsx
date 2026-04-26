@@ -97,7 +97,7 @@ function Projects() {
       desc: "Control system volume using hand gestures.",
       tech: ["Python", "MediaPipe", "Machine Learning"],
       github: "https://github.com/Vinayak-Suryavanshi/Gesture-Volume-Control",
-      live: "",
+      live: "https://github.com/Vinayak-Suryavanshi/Gesture-Volume-Control/blob/main/demo.webp",
       year: "2024",
       overview: "A touchless interface tool that allows users to adjust their computer's master volume simply by moving their hands in front of the webcam. It utilizes Google's MediaPipe framework for robust hand landmark detection and calculates the distance between the thumb and index finger to map to system volume levels.",
       features: [
@@ -271,7 +271,7 @@ function Projects() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-emerald-500 text-white hover:bg-emerald-600 transition-colors shadow-lg shadow-emerald-500/20"
                       >
-                        <ExternalLink className="w-4 h-4" /> Live App
+                        <ExternalLink className="w-4 h-4" /> {selectedProject.live.includes('demo') ? 'View Demo' : 'Live App'}
                       </a>
                     )}
                   </div>
