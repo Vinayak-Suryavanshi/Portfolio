@@ -19,7 +19,7 @@ function ParticlesBg() {
           detectsOn: "window",
           events: {
             onHover: {
-              enable: true,
+              enable: false,
               mode: "repulse",
             },
             resize: true,

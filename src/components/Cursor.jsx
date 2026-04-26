@@ -20,15 +20,15 @@ function Cursor() {
     const move = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
+    };
 
+    const animate = () => {
       // dot follows instantly
       if (dotRef.current) {
         dotRef.current.style.transform =
           `translate3d(${mouse.current.x - 4}px, ${mouse.current.y - 4}px, 0)`;
       }
-    };
 
-    const animate = () => {
       // 🔥 tighter follow (0.25 instead of 0.15)
       ring.current.x += (mouse.current.x - ring.current.x) * 0.25;
       ring.current.y += (mouse.current.y - ring.current.y) * 0.25;
