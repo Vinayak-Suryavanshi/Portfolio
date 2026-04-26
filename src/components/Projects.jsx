@@ -199,8 +199,10 @@ function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setSelectedProject(null)}
               className="absolute inset-0 bg-black/80 dark:bg-black/90 cursor-pointer"
+              style={{ willChange: "opacity" }}
             />
 
             {/* MODAL CONTENT */}
@@ -208,8 +210,9 @@ function Projects() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl shadow-2xl z-10 custom-scrollbar"
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-2xl shadow-2xl z-10 custom-scrollbar transform-gpu"
+              style={{ willChange: "transform, opacity" }}
             >
               
               {/* TOP BAR / CLOSE BUTTON */}
