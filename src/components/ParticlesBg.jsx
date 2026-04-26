@@ -14,7 +14,7 @@ function ParticlesBg() {
       className="fixed inset-0 z-0"
       options={{
         fullScreen: { enable: false, zIndex: 0 },
-        fpsLimit: 60,
+        fpsLimit: 144,
         interactivity: {
           detectsOn: "window",
           events: {
