@@ -19,7 +19,7 @@
     <meta name="author" content="Vinayak" />
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link id="favicon" rel="icon" type="image/svg+xml" href="/favicon-active.svg" />
 
     <!-- THEME COLOR -->
     <meta name="theme-color" content="#0a0a0a" />
@@ -32,7 +32,23 @@
     <meta property="og:description" content="Building intelligent real-time systems using Machine Learning and Computer Vision." />
     <meta property="og:image" content="/logo.png" />
     <meta property="og:type" content="website" />
-
+    <!-- DYNAMIC FAVICON & TITLE SCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const favicon = document.getElementById("favicon");
+        const originalTitle = document.title;
+        
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            document.title = "Come back! (╥﹏╥)";
+            favicon.setAttribute("href", "/favicon-inactive.svg");
+          } else {
+            document.title = originalTitle;
+            favicon.setAttribute("href", "/favicon-active.svg");
+          }
+        });
+      });
+    </script>
   </head>
 
   <body style="font-family: 'Figtree', sans-serif; background-color: #0a0a0a;">

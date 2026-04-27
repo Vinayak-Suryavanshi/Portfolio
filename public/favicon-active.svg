@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="25" fill="#0a0a0a"/>
+  <!-- Glowing border -->
+  <rect width="96" height="96" x="2" y="2" rx="23" fill="none" stroke="#0ff" stroke-width="2" opacity="0.8"/>
+  <text x="50" y="55" font-family="'Courier New', Courier, monospace" font-size="28" font-weight="bold" fill="#0ff" text-anchor="middle" dominant-baseline="middle">(✧ω✧)</text>
+</svg>
